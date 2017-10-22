@@ -7,23 +7,18 @@ using Eigen::MatrixXd;
 using Eigen::VectorXd;
 using namespace std;
 
-class Tools {
-public:
-  /**
-  * Constructor.
-  */
-  Tools();
+namespace Tools {
+    /**
+    * A helper method to calculate RMSE.
+    */
+    VectorXd CalculateRMSE(const vector<VectorXd> &estimations, const vector<VectorXd> &ground_truth);
 
-  /**
-  * Destructor.
-  */
-  virtual ~Tools();
+    double normalize(double angle_rad);
 
-  /**
-  * A helper method to calculate RMSE.
-  */
-  VectorXd CalculateRMSE(const vector<VectorXd> &estimations, const vector<VectorXd> &ground_truth);
-
-};
-
+    MatrixXd covariance(
+            const MatrixXd& XSig,
+            const VectorXd& x,
+            const VectorXd& w,
+            int norm_idx);
+}
 #endif /* TOOLS_H_ */
