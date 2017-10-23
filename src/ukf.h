@@ -37,6 +37,9 @@ public:
     ///* laser measurement covariance matrix
     MatrixXd R_laser_;
 
+    ///* radar measurement covariance matrix
+    MatrixXd R_radar_;
+
     ///* identity
     MatrixXd I_;
 
